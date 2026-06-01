@@ -64,7 +64,7 @@ The application is divided into **3 main pages**, easily accessed through the na
 
 | Calculadora / Calculator | Menu de Conversores / Converters | Conversão de Moedas / Live Currency |
 |---|---|---|
-| <img src="abacalculadora.jpeg" width="220"> | <img src="abaconverters.jpeg" width="220"> | <img src="abacurrency.jpeg" width="220"> |
+| <img src="screenshots/abacalculadora.jpeg" width="220"> | <img src="screenshots/abaconverters.jpeg" width="220"> | <img src="screenshots/abacurrency.jpeg" width="220"> |
 
 ---
 
