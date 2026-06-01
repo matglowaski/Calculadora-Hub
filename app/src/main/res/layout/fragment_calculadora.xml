@@ -8,60 +8,105 @@
     android:background="#00B2D6"
     android:backgroundTint="#00B2D6">
 
+    <TextView
+        android:id="@+id/tv_expressao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="end"
+        android:textColor="#90FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_resultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="end"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_expressao" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_6"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="508dp"
+        android:text="6"
+        android:textColor="#E47841"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_vezes"
+        app:layout_constraintStart_toEndOf="@+id/btn_5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_apagar"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="372dp"
+        android:text="⌫"
+        android:textColor="#DB36F4"
+        android:textSize="25sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_divisao"
+        app:layout_constraintStart_toEndOf="@+id/btn_parentesesR"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_8"
         android:layout_width="70dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="8dp"
         android:text="8"
         android:textColor="#E47841"
         android:textSize="30sp"
         app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_9"
         app:layout_constraintStart_toEndOf="@+id/btn_7"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_parentesesR"
         app:shapeAppearanceOverlay="@style/BotaoRedondo" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_mais"
+        android:id="@+id/btn_7"
         android:layout_width="70dp"
         android:layout_height="60dp"
-        android:layout_marginTop="576dp"
-        android:text="+"
-        android:textColor="#DB36F4"
-        android:textSize="30sp"
-        app:backgroundTint="#00B2D6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_virgula"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="644dp"
-        android:text=","
-        android:textColor="#E47841"
-        android:textSize="32sp"
-        app:backgroundTint="#00B2D6"
-        app:layout_constraintStart_toEndOf="@+id/btn_0"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_0"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="644dp"
-        android:text="0"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:text="7"
         android:textColor="#E47841"
         android:textSize="30sp"
         app:backgroundTint="#00B2D6"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_parentesesL"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_divisao"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="372dp"
+        android:layout_marginEnd="16dp"
+        android:text="÷"
+        android:textColor="#DB36F4"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_apagar"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/BotaoRedondo" />
 
@@ -69,150 +114,36 @@
         android:id="@+id/btn_9"
         android:layout_width="70dp"
         android:layout_height="60dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="8dp"
         android:text="9"
         android:textColor="#E47841"
         android:textSize="30sp"
         app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_menos"
         app:layout_constraintStart_toEndOf="@+id/btn_8"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_apagar"
         app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_2"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="576dp"
-        android:text="2"
-        android:textColor="#E47841"
-        android:textSize="30sp"
-        app:backgroundTint="#00B2D6"
-        app:layout_constraintStart_toEndOf="@+id/btn_1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_6"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="508dp"
-        android:text="6"
-        android:textColor="#E47841"
-        android:textSize="30sp"
-        app:backgroundTint="#00B2D6"
-        app:layout_constraintStart_toEndOf="@+id/btn_5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_vezes"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="508dp"
-        android:text="x"
-        android:textColor="#DB36F4"
-        android:textSize="30sp"
-        app:backgroundTint="#00B2D6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_6"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_5"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="508dp"
-        android:text="5"
-        android:textColor="#E47841"
-        android:textSize="30sp"
-        app:backgroundTint="#00B2D6"
-        app:layout_constraintStart_toEndOf="@+id/btn_4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_3"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="576dp"
-        android:text="3"
-        android:textColor="#E47841"
-        android:textSize="30sp"
-        app:backgroundTint="#00B2D6"
-        app:layout_constraintStart_toEndOf="@+id/btn_2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <TextView
-        android:id="@+id/tv_expressao"
-        android:layout_width="0sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32sp"
-        android:layout_marginTop="208dp"
-        android:layout_marginEnd="32sp"
-        android:gravity="end"
-        android:textColor="#90FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_menos"
         android:layout_width="70dp"
         android:layout_height="60dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:text="-"
         android:textColor="#DB36F4"
         android:textSize="30sp"
         app:backgroundTint="#00B2D6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btn_9"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_1"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="576dp"
-        android:text="1"
-        android:textColor="#E47841"
-        android:textSize="30sp"
-        app:backgroundTint="#00B2D6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_7"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="440dp"
-        android:text="7"
-        android:textColor="#E47841"
-        android:textSize="30sp"
-        app:backgroundTint="#00B2D6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_divisao"
         app:shapeAppearanceOverlay="@style/BotaoRedondo" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_4"
         android:layout_width="70dp"
         android:layout_height="60dp"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="508dp"
         android:text="4"
         android:textColor="#E47841"
@@ -223,51 +154,176 @@
         app:shapeAppearanceOverlay="@style/BotaoRedondo" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_igual"
+        android:id="@+id/btn_5"
         android:layout_width="70dp"
         android:layout_height="60dp"
-        android:layout_marginTop="644dp"
-        android:text="="
-        android:textColor="@color/white"
+        android:layout_marginTop="508dp"
+        android:text="5"
+        android:textColor="#E47841"
         android:textSize="30sp"
-        app:backgroundTint="#DB36F4"
-        app:iconTint="#FF5722"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_virgula"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_6"
+        app:layout_constraintStart_toEndOf="@+id/btn_4"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/BotaoRedondo" />
 
-    <TextView
-        android:id="@+id/tv_resultado"
-        android:layout_width="0sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32sp"
-        android:gravity="end"
-        android:text="0"
-        android:textColor="@color/white"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_expressao" />
-
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_divisao"
+        android:id="@+id/btn_parentesesL"
         android:layout_width="70dp"
         android:layout_height="60dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="372dp"
-        android:text="÷"
+        android:text="("
+        android:textColor="#DB36F4"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_vezes"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="508dp"
+        android:layout_marginEnd="16dp"
+        android:text="ⅹ"
         android:textColor="#DB36F4"
         android:textSize="30sp"
         app:backgroundTint="#00B2D6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_1"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="576dp"
+        android:text="1"
+        android:textColor="#E47841"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_2"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="576dp"
+        android:text="2"
+        android:textColor="#E47841"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_3"
+        app:layout_constraintStart_toEndOf="@+id/btn_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_3"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="576dp"
+        android:text="3"
+        android:textColor="#E47841"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mais"
+        app:layout_constraintStart_toEndOf="@+id/btn_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_mais"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="576dp"
+        android:layout_marginEnd="16dp"
+        android:text="+"
+        android:textColor="#DB36F4"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_limparsessao"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="644dp"
+        android:text="C"
+        android:textColor="#DB36F4"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_virgula"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="644dp"
+        android:text=","
+        android:textColor="#E47841"
+        android:textSize="32sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_igual"
+        app:layout_constraintStart_toEndOf="@+id/btn_0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_0"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="644dp"
+        android:text="0"
+        android:textColor="#E47841"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_virgula"
+        app:layout_constraintStart_toEndOf="@+id/btn_limparsessao"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_igual"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="644dp"
+        android:layout_marginEnd="16dp"
+        android:text="="
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:backgroundTint="#DB36F4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_virgula"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_parentesesR"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="372dp"
+        android:text=")"
+        android:textColor="#DB36F4"
+        android:textSize="30sp"
+        app:backgroundTint="#00B2D6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_apagar"
+        app:layout_constraintStart_toEndOf="@+id/btn_parentesesL"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/BotaoRedondo" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

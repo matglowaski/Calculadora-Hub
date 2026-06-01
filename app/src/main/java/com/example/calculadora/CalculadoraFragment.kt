@@ -46,16 +46,24 @@ class CalculadoraFragment : Fragment() {
         view.findViewById<Button>(R.id.btn_vezes).setOnClickListener { digitouOperador("x") }
         view.findViewById<Button>(R.id.btn_divisao).setOnClickListener { digitouOperador("÷") }
 
+        view.findViewById<Button>(R.id.btn_virgula).setOnClickListener { digitouVirgula() }
+        view.findViewById<Button>(R.id.btn_apagar).setOnClickListener { digitouApagar() }
+        view.findViewById<Button>(R.id.btn_parentesesL).setOnClickListener { digitouParenteses("(") }
+        view.findViewById<Button>(R.id.btn_parentesesR).setOnClickListener { digitouParenteses(")") }
+        view.findViewById<Button>(R.id.btn_limparsessao).setOnClickListener { limparSessao() }
         view.findViewById<Button>(R.id.btn_igual).setOnClickListener { calcularResultado() }
     }
 
     private fun digitouNumero(digito: String) {
+        if (tvResultado.text == "Erro") {
+            tvResultado.text = "0"
+        }
+
         if (novoNumero) {
             tvResultado.text = digito
             novoNumero = false
         } else {
-            if (digito == "," && tvResultado.text.contains(",")) return
-            if (tvResultado.text == "0" && digito != ",") {
+            if (tvResultado.text == "0") {
                 tvResultado.text = digito
             } else {
                 tvResultado.append(digito)
@@ -63,42 +71,93 @@ class CalculadoraFragment : Fragment() {
         }
     }
 
-    private fun digitouOperador(operador: String) {
-        val textoAtual = tvResultado.text.toString().replace(",", ".")
-        primeiroNumero = textoAtual.toDoubleOrNull() ?: 0.0
-        operadorAtual = operador
+    private fun digitouVirgula() {
+        if (tvResultado.text == "Erro") return
 
-        tvExpressao.text = "${tvResultado.text} $operador"
+        if (novoNumero) {
+            tvResultado.text = "0,"
+            novoNumero = false
+        } else {
+            // evita colocar mais de uma vírgula no mesmo número
+            if (!tvResultado.text.contains(",")) {
+                tvResultado.append(",")
+            }
+        }
+    }
+    private fun limparSessao() { //apagar tudo
+        primeiroNumero = 0.0
+        operadorAtual = ""
+        tvExpressao.text = ""
+        tvResultado.text = "0"
+        novoNumero = true
+    }
+
+    private fun digitouApagar() {  //apagar char
+        if (tvResultado.text == "Erro") {
+            tvResultado.text = "0"
+            return
+        }
+
+        val textoAtual = tvResultado.text.toString()
+
+        if (textoAtual.length > 1) {
+            // remove o último caractere
+            tvResultado.text = textoAtual.substring(0, textoAtual.length - 1)
+        } else {
+            // se só tiver 1 caractere, volta a ser 0
+            tvResultado.text = "0"
+            novoNumero = true
+        }
+    }
+
+    private fun digitouParenteses(parenteses: String) {
+        if (tvResultado.text == "Erro") return
+
+        if (novoNumero || tvResultado.text == "0") {
+            tvResultado.text = parenteses
+            novoNumero = false
+        } else {
+            tvResultado.append(parenteses)
+        }
+    }
+
+    private fun digitouOperador(operador: String) {
+        if (tvResultado.text == "Erro") return
+
+        val textoAtual = tvResultado.text.toString()
+
+        if (tvExpressao.text.isEmpty() && textoAtual != "0") {
+            tvExpressao.text = "$textoAtual $operador "
+        } else {
+            tvExpressao.append("$textoAtual $operador ")
+        }
+
         novoNumero = true
     }
 
     private fun calcularResultado() {
-        val textoAtual = tvResultado.text.toString().replace(",", ".")
-        val segundoNumero = textoAtual.toDoubleOrNull() ?: 0.0
-        var resultado = 0.0
+        val expressaoCompleta = (tvExpressao.text.toString() + tvResultado.text.toString())
+            .replace(",", ".")
+            .replace("x", "*")
+            .replace("÷", "/")
 
-        when (operadorAtual) {
-            "+" -> resultado = primeiroNumero + segundoNumero
-            "-" -> resultado = primeiroNumero - segundoNumero
-            "x" -> resultado = primeiroNumero * segundoNumero
-            "÷" -> {
-                if (segundoNumero != 0.0) {
-                    resultado = primeiroNumero / segundoNumero
-                } else {
-                    tvResultado.text = "Erro"
-                    novoNumero = true
-                    return
-                }
+        if (expressaoCompleta.isEmpty()) return
+
+        try {
+            val expression = net.objecthunter.exp4j.ExpressionBuilder(expressaoCompleta).build()
+            val resultado = expression.evaluate()
+
+            tvExpressao.text = ""
+            val resultadoFormatado = resultado.toString().replace(".", ",")
+
+            if (resultadoFormatado.endsWith(",0")) {
+                tvResultado.text = resultadoFormatado.substring(0, resultadoFormatado.length - 2)
+            } else {
+                tvResultado.text = resultadoFormatado
             }
-        }
 
-        tvExpressao.text = ""
-        val resultadoFormatado = resultado.toString().replace(".", ",")
-
-        if (resultadoFormatado.endsWith(",0")) {
-            tvResultado.text = resultadoFormatado.substring(0, resultadoFormatado.length - 2)
-        } else {
-            tvResultado.text = resultadoFormatado
+        } catch (e: Exception) {
+            tvResultado.text = "Erro"
         }
 
         novoNumero = true
