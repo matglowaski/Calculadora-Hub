@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00B2D6">
+
+    <TextView
+        android:id="@+id/textmassa"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="412dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/massa"
+
+        android:textColor="#E47841"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.206"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textcomprimento"
+        android:layout_width="149dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="172dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/comprimento"
+        android:textColor="#E47841"
+
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textvelocidade"
+        android:layout_width="136dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="172dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/velocidade"
+        android:textColor="#E47841"
+
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/texttemperatura"
+        android:layout_width="143dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="416dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/temperatura"
+        android:textColor="#E47841"
+
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/newton"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="452dp"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/newton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/gelado"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="452dp"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/gelado"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toEndOf="@+id/newton" />
+
+    <ImageButton
+        android:id="@+id/mcqueen"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="212dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mcqueen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/longcat"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="212dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/longcat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

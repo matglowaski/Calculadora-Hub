@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculator</string>
+
+    <!-- Strings fragment_conversores -->
+    <string name="massa">Mass</string>
+    <string name="temperatura">Tempeture</string>
+    <string name="velocidade">Speed</string>
+    <string name="comprimento">Length</string>
+
+    <!-- Strings dos 4 fragment -->
+    <string name="digite_valor">Enter value</string>
+    <string name="resultado">Result: %s</string>
+
+    <!-- String fragment_moedas -->
+    <string name="cotacao_atual">Current rate</string>
+</resources>

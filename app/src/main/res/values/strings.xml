@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+
+    <!-- Strings fragment_conversores -->
+    <string name="massa">Massa</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="velocidade">Velocidade</string>
+    <string name="comprimento">Comprimento</string>
+
+    <!-- Strings dos 4 fragment -->
+    <string name="digite_valor">Digite o valor</string>
+    <string name="resultado">Resultado: %s</string>
+
+    <!-- String fragment_moedas -->
+    <string name="cotacao_atual">Cotação atual</string>
+
+</resources>
